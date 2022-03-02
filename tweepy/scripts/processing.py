@@ -1,13 +1,13 @@
 import tweepy
 
-api_key = 'put your api key here'
+api_key = 'api key here'
 api_key_secret = 'api key secret here'
 access_token = 'access token here'
 access_token_secret = 'access token secret here'
 
 auth = tweepy.OAuthHandler(api_key, api_key_secret)
 auth.set_access_token(access_token, access_token_secret)
-api = tweepy.API(auth)
+api = tweepy.API(auth, wait_on_rate_limit=True)
 
 def createDataSet(sourceFile, destinationFile):
     import csv
@@ -20,7 +20,6 @@ def createDataSet(sourceFile, destinationFile):
         for row in lineReader:
             raw.append({"tweet_id": row[1]})
     
-    sleepTime = 2
     partialDataSet = []
 
     for tweet in raw:
@@ -45,6 +44,6 @@ def createDataSet(sourceFile, destinationFile):
     return partialDataSet
 
 sourceFile = "where the file is for you"
-destinationFile = "where you want it to save"
+destinationFile = "where you want to save the file"
 
 result = createDataSet(sourceFile, destinationFile)
