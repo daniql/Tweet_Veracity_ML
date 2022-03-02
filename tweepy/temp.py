@@ -1,13 +1,13 @@
 import tweepy
 
-api_key = 'HM6RvuZSXPa23UDc9zmqKYXZq'
-api_key_secret = 'aWfEDaYdUv3HXrgBtzhRvUiAbKJAlUx7pD5V7bgQvLTvUzr1Hb'
-access_token = '1496715621903618049-oZOlbyxTDpJqCUH67O5kue0domcsiP'
-access_token_secret = 'ruKLYKaSRv9i9Jg44kL9OH6zwg4FZZKevipDe7BiOR4Ue'
+api_key = 'chdJOsmGQaS4gqAPYpkiBzsIm'
+api_key_secret = 'WHhuj5Z8vlw1mi6prckDbdFcWtCmWNIPP2wqBguHTV71OgOjOZ'
+access_token = '2531610866-YTDqkzarilXx7UXdhfQRHBL11CAyTYWTonbZzON'
+access_token_secret = 'EB6Pze8xeYIqnoAIZkZuKFXy2IuIYIIEKDTTE1VqIkhsg'
 
 auth = tweepy.OAuthHandler(api_key, api_key_secret)
 auth.set_access_token(access_token, access_token_secret)
-api = tweepy.API(auth)
+api = tweepy.API(auth, wait_on_rate_limit=True)
 
 def createDataSet(sourceFile, destinationFile):
     import csv
@@ -46,7 +46,7 @@ def createDataSet(sourceFile, destinationFile):
     
     return partialDataSet
 
-sourceFile = "/Users/danny/Documents/School/APS360/Project/tweepy/to_process/xaa"
-destinationFile = "/Users/danny/Documents/School/APS360/Project/tweepy/processed"
+sourceFile = "/Users/danny/Documents/School/APS360/Project/tweepy/tweet_ids/real2.csv"
+destinationFile = "/Users/danny/Documents/School/APS360/Project/tweepy/tagged/real2.csv"
 
 result = createDataSet(sourceFile, destinationFile)
