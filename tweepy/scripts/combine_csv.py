@@ -2,7 +2,7 @@ import os
 import glob 
 import pandas as pd
 
-os.chdir("/Users/danny/Documents/School/APS360/Project/tweepy/real")
+os.chdir("/Users/danny/Documents/School/APS360/Project/tweepy/processed")
 
 extension  = 'csv'
 all_filename = [i for i in glob.glob('*.{}'.format(extension))]

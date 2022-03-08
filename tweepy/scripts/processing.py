@@ -1,9 +1,9 @@
 import tweepy
 
-api_key = 'api key here'
-api_key_secret = 'api key secret here'
-access_token = 'access token here'
-access_token_secret = 'access token secret here'
+api_key = 'AVbXecczZ8bss5mHJGWhoZfd2'
+api_key_secret = 'cTLpvDieSzZPvaaNkhXOQG3nMUln46ycQtEfaYsdSIKSlhF03S'
+access_token = '1496715621903618049-g97Xa04OccWl07ernK7b0IsAzk5Eku'
+access_token_secret = 'oV3s9zwI1yqJOY6eBWdyvGFQ2EHSf5vr0ry7SrdI0LWo0'
 
 auth = tweepy.OAuthHandler(api_key, api_key_secret)
 auth.set_access_token(access_token, access_token_secret)
@@ -20,6 +20,7 @@ def createDataSet(sourceFile, destinationFile):
         for row in lineReader:
             raw.append({"tweet_id": row[1]})
     
+
     partialDataSet = []
 
     for tweet in raw:
@@ -43,7 +44,7 @@ def createDataSet(sourceFile, destinationFile):
     
     return partialDataSet
 
-sourceFile = "where the file is for you"
-destinationFile = "where you want to save the file"
+sourceFile = "/Users/danny/Documents/School/APS360/Project/tweepy/to_process/xab"
+destinationFile = "/Users/danny/Documents/School/APS360/Project/tweepy/processed/xab.csv"
 
 result = createDataSet(sourceFile, destinationFile)
