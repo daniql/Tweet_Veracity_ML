@@ -12,8 +12,8 @@ def high_similarity(seen, line):
 
     return False
 
-readfile = '/Users/danny/Documents/School/APS360/project/tweepy/unfiltered/fake.csv'
-writefile = '/Users/danny/Documents/School/APS360/project/tweepy/filtered/fake_fil_75.csv'
+readfile = '/Users/danny/Documents/School/APS360/project/tweepy/unfiltered/real.csv'
+writefile = '/Users/danny/Documents/School/APS360/project/tweepy/filtered/real_fil_75.csv'
 
 with open(readfile, 'r') as in_file, open(writefile, 'w') as out_file:
     datareader = csv.reader(in_file)
