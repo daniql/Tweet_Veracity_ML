@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{%  block ourpage %}
+<div class="container">
+    <form method="post" action="/upload" enctype="multipart/form-data">
+        <div class="form-group">
+            <label>Tweet</label>
+            <small id="textHelpId" class="form-text text-muted">Enter Tweet URL</small>
+            <input type="text" id="tweeturl" name="url">
+
+        </div>
+        <input type="submit" value="Submit" class="btn btn-primary">
+    </form>
+</div>
+
+{%  endblock %}
